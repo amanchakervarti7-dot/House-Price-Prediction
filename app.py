@@ -5,15 +5,16 @@ import pandas as pd
 import time
 from sklearn.datasets import fetch_california_housing
 from sklearn.ensemble import RandomForestRegressor
-st.title('🏠 House Price prediction using ML')
+st.title('🚗 LUXURY CARS ML🚗')
 st.image('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRcaATve4UvjHyyxJQiwVMgl28a6ijzUImtmiigdualraEf8o8PgCyvNFw&s')
 
 df = pd.read_csv('house_data.csv')
 X = df.iloc[:,:-3]
 y = df.iloc[:,-1]
 
-st.sidebar.title('🏠 Select House features')
-st.sidebar.image('https://i.pinimg.com/originals/f1/be/c8/f1bec81e20d80cd36c82379af920a4e9.gif')
+st.sidebar.title('🚗LUXURY CARS')
+st.sidebar.image('https://i.pinimg.com/originals/10/65/bc/1065bc662c55648c454c462f208d920e.gif')
+st.sidebar.image('https://i.pinimg.com/originals/3e/a5/bf/3ea5bf348bde7d3d4d03e2b0724145e0.gif')
 all_value = []
 for i in X:
   min_value = int(X[i].min())
@@ -38,9 +39,10 @@ house_price = model.predict(final_value)[0]
 
 with st.spinner('Predicting House price'):
   time.sleep(1)
-msg = f'''House price is: $ {round(house_price*100000,2)}'''
+msg = f'''Cars price is: $ {round(house_price*100000,2)}'''
 st.success(msg)
 
 st.markdown('''**Design and Developed by: Aman Chakervarti**''')
+
 
 
